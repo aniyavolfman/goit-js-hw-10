@@ -23,10 +23,15 @@ function onInput() {
                 renderCountryInfo(countries);
                 countryListEl.innerHTML = '';
             }
-            else if (countries.length > 10) { Notify.info("Too many matches found. Please enter a more specific name.") }
+            else if (countries.length > 10) {
+                Notify.info("Too many matches found. Please enter a more specific name.");
+                countryListEl.innerHTML = '';
+                divCountryInfoEl.innerHTML = '';
+            }
             else if (countries.length >= 2 && countries.length <= 10) {
                 renderCountriesList(countries);
                 divCountryInfoEl.innerHTML = '';
+                
             };
         })
     .catch(error => {
