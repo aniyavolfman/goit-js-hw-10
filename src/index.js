@@ -31,6 +31,8 @@ function onInput() {
         })
     .catch(error => {
         Notify.failure('Oops, there is no country with that name');
+        divCountryInfoEl.innerHTML = '';
+        countryListEl.innerHTML = '';
     });
 }
 
